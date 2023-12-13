@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<title>Gestin Ventas</title>
+</h:head>
+<style type="text/css">
+table {
+	border-collapse: collapse;
+	width: 80%;
+	margin: auto;
+}
+
+td {
+	padding: 10px;
+	text-align: left;
+}
+
+input[type=text], select {
+	width: 100%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+
+input[type=submit] {
+	background-color: #4CAF50;
+	color: white;
+	padding: 14px 20px;
+	margin: 8px 0;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+input[type=submit]:hover {
+	background-color: #45a049;
+}
+
+h1 {
+	text-align: center;
+}
+</style>
+<h:body>
+	<h1>Seleccione su opcion</h1>
+	<h:form>
+		<p:panel header="panelProducto" toggleable="true">
+			<p:panelGrid columns="2" styleClass="panelGrid">
+				<h:outputLabel value="Código producto:" />
+
+				<p:inputText id="codigoProducto"
+					value="#{productoBean.codigoproducto}" />
+
+				<h:outputLabel value="Nombre producto:" />
+				<p:outputLabel id="nombreProducto"
+					value="#{productoBean.nombreproducto}" />
+
+
+				<h:outputLabel value="Nombre cliente:"
+					rendered="#{not empty flash.nombreCliente}" />
+				<h:outputLabel value="#{flash.nombreCliente}"
+					rendered="#{not empty flash.nombreCliente}" />
+
+				<p:outputLabel value="Cantidad de producto:" />
+				<p:inputText value="#{productoBean.cantidad}" />
+
+				<p:outputLabel value="Subtotal:" />
+				<p:outputLabel value="#{productoBean.subtotalProducto}" />
+
+
+				<!-- 		<p:outputLabel value="Total IVA:" />		<p:outputLabel value="#{productoBean.totalProducto}" />
+				
+				<h:outputText value="IVA (%):" />
+				<h:outputText value="#{productoBean.tiendaBean.valoriva}" />
+				
+				 -->
+
+				<h:commandButton value="Validar"
+					action="#{productoBean.buscarProductoPorCodigo}"
+					update="nombreProducto" process="@form" />
+				<p:outputLabel />
+
+				<!---->
+				<p:outputLabel value="Total " />
+				<p:outputLabel value="#{productoBean.totalProductos}" />
+
+				<p:outputLabel value="Total IVA:" />
+				<p:outputLabel value="#{productoBean.totalProducto}" />
+
+				<h:commandButton value="Añadir"
+					action="#{productoBean.agregarProducto}" update="nombreProducto"
+					process="@form" />
+
+				<h:commandButton value="Aceptar" action="gestionVentasPago.xhtml" />
+				<h:commandButton value="Totalizar"
+					action="#{productoBean.calcularTotalProductos}" />
+				<h:commandButton value="Efectivo"
+					action="#{productoBean.registrarVenta}" />
+
+				<h:commandButton value="Cuotas"
+					action="#{productoBean.registrarCuota}" />
+
+			</p:panelGrid>
+
+			<!-- En value poner el bean asignado -->
+
+			<!-- Crear el metodo para mostrar el panel -->
+
+		</p:panel>
+		<!-- </p:dialog> -->
+	</h:form>
+</h:body>
+</html>

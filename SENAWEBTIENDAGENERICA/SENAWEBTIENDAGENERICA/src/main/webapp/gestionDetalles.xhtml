@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Gestión de Detalles de Venta</title>
+</h:head>
+<style type="text/css">
+table {
+	border-collapse: collapse;
+	width: 80%;
+	margin: auto;
+}
+
+td {
+	padding: 10px;
+	text-align: left;
+}
+
+input[type=text], select {
+	width: 100%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+
+input[type=submit] {
+	background-color: #4CAF50;
+	color: white;
+	padding: 14px 20px;
+	margin: 8px 0;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+input[type=submit]:hover {
+	background-color: #45a049;
+}
+
+h1 {
+	text-align: center;
+}
+</style>
+<h:body>
+	<h:form>
+		<h2>Detalles de la Compra</h2>
+
+		<p:dataTable value="#{productoBean.detallesVenta}" var="detalle">
+			<p:column headerText="Código">
+				<h:outputText value="#{detalle.codigodetalleventa}" />
+			</p:column>
+
+			<p:column headerText="Cantidad">
+				<h:outputText value="#{detalle.cantidad}" />
+			</p:column>
+
+			<p:column headerText="Valor Unitario">
+				<h:outputText value="#{detalle.valorunitario}" />
+			</p:column>
+			
+				<p:column headerText="Valor Total">
+				<h:outputText value="#{detalle.valortotal}" />
+			</p:column>
+		</p:dataTable>
+
+		<p>Valor Total de la Venta: #{productoBean.totalProductos}</p>
+	</h:form>
+</h:body>
+</html>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>TABLA DE PRODUCTOS</title>
+</h:head>
+<h:body>
+	<!--  Var es la variable . VALUE ES LA PARTE IMPORTANTE, POR QUE LE ENVIO EL ARRAYLIST ENTERO  -->
+	<p:dataTable id="tablaDeProductos" var="producto" stripedRows="true"
+		style="width:800px" value="#{productoBean.listaProductos}">
+
+		<p:column id="codigoproducto" headerText="codigoproducto">
+			<h:outputText value="#{producto.codigoproducto}">
+				<!--  
+			Es el mismo del var producto  Analogia for each 
+			-->
+
+				<!--  Prime para el formato  -->
+
+			</h:outputText>
+		</p:column>
+
+		<p:column id="nombreproducto" headerText="nombreproducto">
+			<h:outputText value="#{producto.nombreproducto}" />
+		</p:column>
+		<p:column id="nitproveedor" headerText="nitproveedor">
+			<h:outputText value="#{producto.nitproveedor}" />
+		</p:column>
+
+		<p:column id="preciocompra" headerText="preciocompra">
+			<h:outputText value="#{producto.preciocompra}" />
+		</p:column>
+
+		<p:column id="precioventa" headerText="precioventa">
+			<h:outputText value="#{producto.precioventa}" />
+		</p:column>
+
+	</p:dataTable>
+</h:body>
+</html>

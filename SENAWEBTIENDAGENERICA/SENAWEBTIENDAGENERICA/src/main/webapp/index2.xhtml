@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+    xmlns:p="http://primefaces.org/ui">
+<h:head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <title>Formulario</title>
+</h:head>
+<style type="text/css">
+table {
+	border-collapse: collapse;
+	width: 80%;
+	margin: auto;
+}
+
+td {
+	padding: 10px;
+	text-align: left;
+}
+
+input[type=text], select {
+	width: 100%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+
+input[type=submit] {
+	background-color: #4CAF50;
+	color: white;
+	padding: 14px 20px;
+	margin: 8px 0;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+input[type=submit]:hover {
+	background-color: #45a049;
+}
+
+h1 {
+	text-align: center;
+}
+</style>
+<h:body>
+    <h1>Seleccione su opción</h1>
+    <h:form>
+        <p:panelGrid columns="2" style="width: 300px;">
+            <p:outputLabel for="gestionClientes" value="Gestión de clientes" />
+            <h:commandButton id="gestionClientes" value="Clientes" action="gestionClientes.xhtml" />
+
+            <p:outputLabel for="gestionProveedores" value="Gestión de proveedores" />
+            <h:commandButton id="gestionProveedores" value="Proveedores" action="gestionProveedores.xhtml" />
+
+            <p:outputLabel for="gestionProducto" value="Gestión de productos" />
+            <h:commandButton id="gestionProducto" value="Productos" action="gestionProducto.xhtml" />
+
+            <p:outputLabel for="gestionVentas" value="Gestión de ventas" />
+            <h:commandButton id="gestionVentas" value="Ventas" action="gestionVentas.xhtml" />
+
+            <p:outputLabel for="gestionCompras" value="Gestión de compras" />
+            <h:commandButton id="gestionCompras" value="Compras" action="gestionCompras.xhtml" />
+
+            <p:outputLabel for="informacionTienda" value="Información Tienda" />
+            <h:commandButton id="informacionTienda" value="Información" />
+        </p:panelGrid>
+    </h:form>
+</h:body>
+</html>

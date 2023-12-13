@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<title>Gestión Ventas</title>
+</h:head>
+<style type="text/css">
+table {
+	border-collapse: collapse;
+	width: 80%;
+	margin: auto;
+}
+
+td {
+	padding: 10px;
+	text-align: left;
+}
+
+input[type=text], select {
+	width: 100%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+
+input[type=submit] {
+	background-color: #4CAF50;
+	color: white;
+	padding: 14px 20px;
+	margin: 8px 0;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+input[type=submit]:hover {
+	background-color: #45a049;
+}
+
+h1 {
+	text-align: center;
+}
+</style>
+<h:body>
+	<h:form>
+		<p:panelGrid columns="2" styleClass="panelGrid">
+
+			<h:outputLabel value="Cedula" />
+			<h:outputText value="Cédula del cliente: #{flash.cedulaCliente}" />
+			<h:outputText value="Cédula del cliente: #{clienteBean.cedula}" />
+
+		</p:panelGrid>
+
+
+
+
+
+		<!-- En value poner el bean asignado -->
+
+		<!-- Crear el metodo para mostrar el panel -->
+		<!-- </p:dialog> -->
+	</h:form>
+</h:body>
+</html>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>TABLA DE CLIENTES</title>
+</h:head>
+<h:body>
+	<p:dataTable id="tablaDeClientes" var="cliente" stripedRows="true" style="width:800px"
+		value="#{clienteBean.listaClientes}" >
+
+		<p:column id="Id" headerText="Id">
+			<h:outputText value="#{cliente.id}">
+				<f:convertNumber type="number" maxIntegerDigits="5"
+					maxFractionDigits="0" />
+			</h:outputText>
+		</p:column>
+
+		<p:column id="Nombre" headerText="Nombre">
+			<h:outputText value="#{cliente.nombre}" />
+		</p:column>
+
+		<p:column id="Apellidos" headerText="Apellidos">
+			<h:outputText value="#{cliente.apellidos}" />
+		</p:column>
+
+		<p:column id="Direccion" headerText="Direccion">
+			<h:outputText value="#{cliente.direccion}" />
+		</p:column>
+
+	</p:dataTable>
+</h:body>
+</html>

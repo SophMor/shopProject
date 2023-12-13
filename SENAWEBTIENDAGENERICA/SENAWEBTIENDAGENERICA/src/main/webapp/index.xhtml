@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3c.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<title>Tiendita</title>
+
+</h:head>
+<style type="text/css">
+table {
+	border-collapse: collapse;
+	width: 80%;
+	margin: auto;
+}
+
+td {
+	padding: 10px;
+	text-align: left;
+}
+
+input[type=text], select {
+	width: 100%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+
+input[type=submit] {
+	background-color: #4CAF50;
+	color: white;
+	padding: 14px 20px;
+	margin: 8px 0;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+input[type=submit]:hover {
+	background-color: #45a049;
+}
+
+h1 {
+	text-align: center;
+}
+</style>
+<h:body>
+	<h:form>
+		<p:panelGrid columns="3" styleClass="input-grid">
+
+			<p:outputLabel value="TIPO COMERCIO" />
+			<p:inputText placeholder="tipo Comercio"
+				value="#{tiendaBean.tipocomercio}" id="comercioInput"
+				required="true" size="20"
+				requiredMessage="Por favor, ingrese los datos correctos" />
+			<p:message for="comercioInput" />
+
+			<p:outputLabel value="NIT Tienda: " />
+			<p:inputText placeholder="NIT" value="#{tiendaBean.nit}"
+				id="nitINPUT" required="true" size="20"
+				requiredMessage="Por favor, ingrese los datos correctos" />
+			<p:message for="nitINPUT" />
+
+			<p:outputLabel value="Nombre Tienda " />
+			<p:inputText placeholder="nombre" value="#{tiendaBean.nombretienda}"
+				id="tiendaNombreIn" required="true" size="20"
+				requiredMessage="Por favor, ingrese los datos correctos" />
+			<p:message for="tiendaNombreIn" />
+
+			<p:outputLabel value="Ciudad Tienda " />
+			<p:inputText placeholder="ciudad" value="#{tiendaBean.ciudadtienda}"
+				id="ciudadInput" required="true" size="20"
+				requiredMessage="Por favor, ingrese los datos correctos" />
+			<p:message for="ciudadInput" />
+
+			<p:outputLabel value="Valor IVA: %" />
+			<p:inputText placeholder="IVA" value="#{tiendaBean.valoriva}"
+				id="ivaInput" required="true" size="20"
+				requiredMessage="Por favor, ingrese los datos correctos" />
+			<p:message for="ivaInput" />
+
+			<p:outputLabel value="Tasa interés tienda : % " />
+			<p:inputText placeholder="Tasa Interés"
+				value="#{tiendaBean.tasainteres}" id="TasaInteresInput"
+				required="true" size="20"
+				requiredMessage="Por favor, ingrese los datos correctos" />
+			<p:message for="TasaInteresInput" />
+
+			<p:outputLabel value="Nombre del banco cta cte: " />
+			<p:inputText placeholder="Nombre banco" value="#{tiendaBean.banco}"
+				id="nombreBancoInput" required="true" size="20"
+				requiredMessage="Por favor, ingrese los datos correctos" />
+			<p:message for="nombreBancoInput" />
+
+			<p:outputLabel value="Número Cuenta Corriente " />
+			<p:inputText placeholder="NÚMERO CUENTA"
+				value="#{tiendaBean.cuentacorriente}" id="NumeroCuentaInput"
+				required="true" size="20"
+				requiredMessage="Por favor, ingrese los datos correctos" />
+			<p:message for="NumeroCuentaInput" />
+
+			<p:outputLabel value="Nombre gerente: " />
+			<p:inputText placeholder="Nombre: "
+				value="#{tiendaBean.nombregerente}" id="NombreGerenteInput"
+				required="true" size="20"
+				requiredMessage="Por favor, ingrese los datos correctos" />
+			<p:message for="NombreGerenteInput" />
+
+		</p:panelGrid>
+
+		<h:commandButton value="añadir" action="#{tiendaBean.agregar}"
+			update="mensajes" />
+		<p:messages id="mensajes" globalOnly="true" layout="table" />
+
+		<h:commandButton value="modificar" action="#{tiendaBean.actualizar}"
+			update="mensajesModificar" />
+		<p:messages id="mensajesModificar" globalOnly="true" layout="table" />
+
+		<h:commandButton value="aceptar" action="index2.xhtml"
+			update="mensajesAceptar" />
+		<p:messages id="mensajesAceptar" globalOnly="true" layout="table" />
+
+	</h:form>
+</h:body>
+</html>
